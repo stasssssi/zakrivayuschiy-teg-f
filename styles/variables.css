@@ -1,1 +1,30 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --font-main: 'Inter', sans-serif;
+    --font-accent: 'PressStart2P', monospace;
+    --fw-card-text: 410;
+    --fw-card-title: 715;
+    --page-background: 
+    repeating-linear-gradient(
+        90deg,
+        #d3d3d3 0,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+    ),
+    repeating-linear-gradient(
+        0deg,
+        #d3d3d3 0,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+    ),
+    linear-gradient(
+        to bottom,
+        #e7e7e7 0%,
+        #e7e7e7 0.01%,
+        #1a1a1a 100%
+    );
+    --header-width: clamp(375px, 90%, 700px);
+    --label-stroke-color: #ffffff;
+}

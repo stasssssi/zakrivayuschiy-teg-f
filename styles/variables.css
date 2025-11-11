@@ -27,4 +27,9 @@
     );
     --header-width: clamp(375px, 90%, 700px);
     --label-stroke-color: #ffffff;
+    --accent-color: #ffffff;
+    --focus-color: #000;
+    --contour-color: #000000;
+    --animation-fill-color: #000000;
+    --animation-color: #FF0000;
 }

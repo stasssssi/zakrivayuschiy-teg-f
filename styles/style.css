@@ -26,14 +26,13 @@
 }
 
 .header {
-  height: 327px;
   background-color: #fff;
   margin-top: 100px;
   margin-bottom: 100px;
   border: 2px solid black;
 
   @media (width >= 376px) {
-    height: 368px;
+    margin-bottom: 97px;
 }
 }
 
@@ -43,6 +42,7 @@
   padding-top: 120px;
   padding-bottom: 20px;
   text-align: center;
+  text-transform: uppercase;
 
   @media (width >= 376px) {
     font-weight: 400;
@@ -55,12 +55,23 @@
   font-family: var(--font-accent);
   text-align: center;
   text-transform: uppercase;
+  padding-bottom: 120px;
+
+  @media (width >= 376px) {
+    font-weight: 400;
+    padding-bottom: 127px;
+}
 }
 
 .main__list {
   display: grid;
-  gap: 52px;
-  margin-bottom: 50px;
+  gap: 48px;
+  margin-bottom: 49px;
+
+  @media (width >= 376px) {
+    margin-bottom: 48px;
+    gap: 49px;
+}
 }
 
 .button__text {
@@ -72,6 +83,7 @@
   border: 2px solid black;
   display: flex;
   flex-direction: column;
+
 }
 
 .card__tittle {
@@ -83,6 +95,7 @@
 .card__text {
   font-size: 18px;
   padding: 25px;
+  padding-bottom: 23px;
 }
 
 .card__text-2 {
@@ -115,6 +128,17 @@
   border-color: var(--focus-color); 
 }
 
+.button {
+  color: var(--button-text-color);
+  background-color: var(--bg-color);
+  border: 2px solid #000;
+  padding: 9px 35px;
+  font-family: var(--font-accent);
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+}
+
 .button::before {
   content: '';
   position: absolute;
@@ -143,37 +167,42 @@
   width: 100%;
   object-fit: cover;
   aspect-ratio: 1;
+  display: block;
+  height: 374px;
+
+  @media (width >= 376px) {
+  height: 698px;
+}
 }
 
 .card-img-container {
   position: relative;
+  border: 1px solid #000000;
 }
 
 .label {
   position: absolute;
   top: 25px;
   right: 25px;
-  font-family: var(--font-accent);
+  font-family: var(--font-accent, 'PressStart2P', 'Courier New', monospace);
   font-size: 14px;
   mix-blend-mode: hard-light;
   color: #000000;
   opacity: 0.5;
   letter-spacing: 1px;
   line-height: 100%;
+  text-shadow: 
+    -1px -1px 0 var(--label-stroke-color, #fff),
+    1px -1px 0 var(--label-stroke-color, #fff),
+    -1px 1px 0 var(--label-stroke-color, #fff),
+    1px 1px 0 var(--label-stroke-color, #fff);
 }
 
-@supports (-webkit-text-stroke: 1px var(--label-stroke-color)) {
+@supports (-webkit-text-stroke: 1px var(--label-stroke-color, #fff)) or (text-stroke: 1px var(--label-stroke-color, #fff)) {
   .label {
-    -webkit-text-stroke: 1px var(--label-stroke-color);
-  }
-}
-
-@supports not (-webkit-text-stroke: 1px var(--label-stroke-color)) {
-  .label {
-    text-shadow: -1px -1px 0 var(--label-stroke-color),
-                 1px -1px 0 var(--label-stroke-color),
-                 -1px 1px 0 var(--label-stroke-color),
-                 1px 1px 0 var(--label-stroke-color);
+    -webkit-text-stroke: 1px var(--label-stroke-color, #fff);
+    text-stroke: 1px var(--label-stroke-color, #fff);
+    text-shadow: none;
   }
 }
 
@@ -184,43 +213,39 @@
 
 .button-footer {
   margin-bottom: 100px;
-  padding: 53px 20px 17px 20px;
   position: relative;
   background-color: #fff;
   border: 2px solid #000;
-  padding: 12px 37px;
   font-family: var(--font-accent);
   cursor: pointer;
   font-size: 14px;
-}
+  width: 310px;
+  padding: 17px 18px 17px 18px;
+  display: flex;
+  flex-direction: column;
 
-@media (width >= 375px) {
-  .button-footer {
-    width: 338px;
-    height: 50px;
-    padding: 0;
-    padding-left: 29px;
-  }
+  @media (width >= 376px) {
+    width: 335px;
+    flex-direction: row;
+    padding: 17px 20px 15px 18px;
+    align-items: center;
+}
 }
 
 .floppy {
-  width: 27px;
-  height: 27px;
-  position: absolute;
-  top: 14px;
-  left: 45%;
+  width: 28px;
+  height: 28px;
   z-index: 1;
   background-color: var(--accent-color, #000000);
-  transition: color 0.5s ease-in-out;
-}
+  margin-left: 45%;
+  margin-bottom: 5px;
 
-@media (width >= 375px) {
-  .floppy {
+  @media (width >= 376px) {
     width: 21px;
     height: 21px;
-    top: 12px;
-    left: 18px;
-  }
+    margin: 0;
+    margin-right: 6px;
+}
 }
 
 .modal {
@@ -260,7 +285,7 @@
 }
 
 .modal::backdrop {
-  background-color: rgb(0 0 0 / 0.7);
+  background-color: rgb(0 0 0 / 0.6);
 } 
 
 .img-filter-one {
@@ -309,6 +334,10 @@
 .main-body {
   fill: transparent;
   transition: fill 0.3s linear;
+}
+
+.like-icon {
+  background-position: left right;
 }
 
 .like-icon:hover .core {
@@ -362,13 +391,14 @@
   animation: sparks-blink 0.3s ease-in 0.3s 1;
 }
 
-.button {
-  background-color: #fff;
-  border: 2px solid #000;
-  padding: 9px 35px;
-  font-family: var(--font-accent);
-  cursor: pointer;
-  font-size: 14px;
-  position: relative;
-  
+.card__like-button {
+  align-self: center;
+}
+
+.btn__text {
+  mix-blend-mode: difference;
+}
+
+.button svg {
+  mix-blend-mode: difference;
 }

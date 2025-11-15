@@ -191,6 +191,7 @@
   opacity: 0.5;
   letter-spacing: 1px;
   line-height: 100%;
+  z-index: 1000;
   text-shadow: 
     -1px -1px 0 var(--label-stroke-color, #fff),
     1px -1px 0 var(--label-stroke-color, #fff),
@@ -250,15 +251,14 @@
 
 .modal {
   padding: 0;
+  flex-direction: column;
+  width: 341px;
+  padding: 30px;
+  justify-content: center;
 }
 
 .modal[open] {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 341px;
-  padding: 30px;
-  justify-content: center;
 }
 
 @media (width >= 375px) {
@@ -273,46 +273,42 @@
   font-weight: 400;
   line-height: 150%;
   text-transform: uppercase;
-  padding-left: 59px;
 }
 
-.modal__floppy {
-  width: 39px;
-  height: 39px;
-  position: absolute;
-  top: 42px;
-  left: 30px;
+.modal__wrapper {
+  display: flex;
+  column-gap: 20px;
 }
 
 .modal::backdrop {
   background-color: rgb(0 0 0 / 0.6);
 } 
 
-.img-filter-one {
+.filter-brightness {
   filter: brightness(200%);
 }
 
-.img-filter-two {
+.filter-contrast {
   filter: contrast(40%);
 }
 
-.img-filter-three {
+.filter-blur {
   filter: blur(0.3rem);
 }
 
-.img-filter-four {
+.filter-opacity {
   filter: opacity(0.5);
 }
 
-.img-filter-five {
+.filter-grayscale {
   filter: grayscale(0.8);
 }
 
-.img-filter-six {
+.filter-sepia {
   filter: sepia(80%);
 } 
 
-.img-filter-seven {
+.filter {
   filter: sepia(1) contrast(2) brightness(200%);
 }
 
@@ -401,4 +397,12 @@
 
 .button svg {
   mix-blend-mode: difference;
+}
+
+.modal__floppy {
+  width: 80px;
+  height: 80px;
+  margin: 0;
+  align-self: center;
+  padding-bottom: 17px;
 }

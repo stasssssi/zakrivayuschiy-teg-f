@@ -1,1 +1,1 @@
-https://github.com/stasssssi/zakrivayuschiy-teg-f
+https://github.com/stasssssi/slozhno-sosredotochitsya-fd

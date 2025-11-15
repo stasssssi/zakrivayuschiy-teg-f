@@ -76,6 +76,7 @@
 
 .button__text {
   display: block;
+  mix-blend-mode: difference;
 }
 
 .card {
@@ -237,7 +238,6 @@
   width: 28px;
   height: 28px;
   z-index: 1;
-  background-color: var(--accent-color, #000000);
   margin-left: 45%;
   margin-bottom: 5px;
 
@@ -389,10 +389,6 @@
 
 .card__like-button {
   align-self: center;
-}
-
-.btn__text {
-  mix-blend-mode: difference;
 }
 
 .button svg {

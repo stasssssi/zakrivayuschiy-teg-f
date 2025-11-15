@@ -33,5 +33,5 @@
     --animation-fill-color: #000000;
     --animation-color: #FF0000;
     --bg-color: #fff;
-    --button-text-color: var(var(--bg-color));
+    --button-text-color: var(--bg-color);
 }

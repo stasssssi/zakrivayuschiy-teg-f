@@ -403,6 +403,7 @@
   align-self: center;
   inline-size: 130px;
   block-size: 38px;
+  padding: 0;
 }
 
 .button svg {
